@@ -10,6 +10,7 @@ It can be executed in command line tool as follows
   * cd path to the package folder>java com.fifthgen.unittest.Portfolio.java
 
 Portfoliotest class contains the testing part of java program.
-It was written with the help of testng framework.
-It was built using maven.
+  * It was written with the help of testng framework.
+  * It can be executed by running the testng.xml
+
 
