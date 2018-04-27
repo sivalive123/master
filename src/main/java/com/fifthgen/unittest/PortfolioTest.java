@@ -11,6 +11,7 @@ public class PortfolioTest extends Portfolio {
 
 	@Test(priority = 1)
 	public void validateRemovalOfCommasInEachPortfolio() throws FileNotFoundException {
+
 		ArrayList<String> portFolioExamples = new ArrayList<String>();
 		portFolioExamples.add("a-,b-,c,d,");
 		portFolioExamples.add("14,20,30-");
@@ -18,12 +19,13 @@ public class PortfolioTest extends Portfolio {
 		for (int i = 0; i < portfolio.length; i++) {
 			Assert.assertFalse(portfolio[i].contains(","));
 		}
+
 	}
 
 	@Test(priority = 2)
 	public void validateTotalStockValueInEachPortforlio() throws FileNotFoundException {
-		String[] portFolioExamples = { "a - 100 b - 90 c - 80", "a -100 c - 90", "c - 10 d-50" };
 
+		String[] portFolioExamples = { "a - 100 b - 90 c - 80", "a -100 c - 90", "c - 10 d-50" };
 		int[] totalStockInEachPortfolio = totalStockValueWithoutSort(portFolioExamples);
 		String[] totalStockInPortfolio = new String[totalStockInEachPortfolio.length];
 		for (int i = 0; i < totalStockInEachPortfolio.length; i++) {
@@ -33,17 +35,14 @@ public class PortfolioTest extends Portfolio {
 		Assert.assertEquals(totalStockInPortfolio[0], "270");
 		Assert.assertEquals(totalStockInPortfolio[1], "190");
 		Assert.assertEquals(totalStockInPortfolio[2], "60");
+
 	}
 
 	@Test(priority = 3)
 	public void validateTotalStockInDescendingOrder() throws FileNotFoundException {
+
 		int[] totalStockInPortfolio = { 100, 200, 300, 150, 250, 50 };
-
 		int[] totalStockInDescending = totalStockInDescendingOrder(totalStockInPortfolio);
-		for (int i = 0; i < totalStockInDescending.length; i++) {
-			System.out.println(totalStockInDescending[i]);
-
-		}
 		Assert.assertEquals(totalStockInDescending[0], 300);
 		Assert.assertEquals(totalStockInDescending[1], 250);
 		Assert.assertEquals(totalStockInDescending[2], 200);
@@ -55,6 +54,7 @@ public class PortfolioTest extends Portfolio {
 
 	@Test(priority = 4)
 	public void validateFinalOrder() throws FileNotFoundException {
+
 		int[] totalStockInEachPortfolio = { 100, 50, 300, 150 };
 		int[] totalStockInEachPortfolioDesc = { 300, 150, 100, 50 };
 		ArrayList<String> portFolioExamples = new ArrayList<String>();
